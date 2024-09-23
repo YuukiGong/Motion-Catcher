@@ -30,12 +30,13 @@ python experiments.py \
     --numframe 14 \
     --decode_chunk_size 8 \
 ```
-where '--image_path' specifies the directory containing the input images.
-'--output_path' sets the directory where the generated video will be saved.
-'--video_clip' sets the video clip number.
-'--width' and '--height' set the resolution of the output video.
-'--numframe' defines the total number of frames in per video clip.
-'--decode_chunk_size' sets the number of frames to decode at once, which can optimize memory usage during video generation.
+Args:
+- `--image_path` specifies the directory containing the input images.
+- `--output_path` sets the directory where the generated video will be saved.
+- `--video_clip` sets the video clip number.
+- `--width` and `--height` set the resolution of the output video.
+- `--numframe` defines the total number of frames in per video clip.
+- `--decode_chunk_size` sets the number of frames to decode at once, which can optimize memory usage during video generation.
 
 ## Visualizations-Zeroshot
 
@@ -104,3 +105,7 @@ where '--image_path' specifies the directory containing the input images.
     <td><img src="assets/fig/after6.gif" ></td>
   </tr>
 </table>
+
+
+# Acknowledgement
+This repository borrows heavily from [Diffusers](https://github.com/huggingface/diffusers), [ControlNet](https://github.com/lllyasviel/ControlNet), thanks for open-sourcing! This work was done in Bytedance, thanks for the cooperators! 
