@@ -759,7 +759,7 @@ def main(args):
 
     image_logs = None
     
-    #  输出的image是tensor格式 
+
     # images = [np.array(image).astype(np.float32) / 255.0 for image in images]
     # images = np.stack(images, axis=0)
     # torch.from_numpy(images.transpose(0, 3, 1, 2))
@@ -805,13 +805,13 @@ def main(args):
                 content_img = content_img + 0.02 * content_imgnoise
                 
                 
-                # 注意batch
+         
                 video_list = video
                 bsz = video_list.shape[0]
                 # vae.to(dtype=torch.float32)
                 image_latents = vae.encode(image.to(dtype=weight_dtype)).latent_dist.mode().to(image_embeddings.dtype) #b,4, 72 128
                 content_imglatents = vae.encode(content_img.to(dtype=weight_dtype)).latent_dist.mode().to(image_embeddings.dtype) #b,4, 72 128
-                # 将视频送入vae  分段 14个14个的来
+            
                 # video_list = video_list.view(-1, 3, 576, 1024)
                 videos = []
                 for i in range(0,bsz):
@@ -831,9 +831,7 @@ def main(args):
                 add_time_ids = torch.tensor([add_time_ids], dtype=image_embeddings.dtype)
 
                 add_time_ids = add_time_ids.repeat(bsz, 1).to(device=device)
-                
-                # 加噪得到target
-                # 处理噪声
+        
                 video_noise = torch.randn([bsz*num_frames,4,72,128])
                 
                 # video_noise = video_noise.unsqueeze(1).repeat(1, num_frames, 1, 1, 1)                
@@ -846,7 +844,7 @@ def main(args):
                 # timesteps = torch.randint(0, scheduler.config.num_train_timesteps, (bsz,), device=device)
                 # timesteps = timesteps.long()
                 scheduler.set_timesteps(25, device=device)
-                random_index = torch.randint(0, scheduler.timesteps.numel(), (bsz,))  # 生成一个随机整数索引
+                random_index = torch.randint(0, scheduler.timesteps.numel(), (bsz,))  
                 timesteps = scheduler.timesteps[random_index].to(device=device)
                 # timesteps = timesteps.long()
                 # video_list = video_list.view(bsz,num_frames, 4, 72, 128)
@@ -872,7 +870,7 @@ def main(args):
                 # latents = scheduler.scale_model_input(latents, timesteps)
  
                 latent_model_input = torch.cat([innoisy_latents, image_latents], dim=2)
-                # 缩小看看显存
+              
                 # latent_model_input = F.adaptive_avg_pool3d(latent_model_input, (72//2, 128//2, latent_model_input.size(-1)))
                 # controlnet_image = F.adaptive_avg_pool3d(controlnet_image, (72//2, 128//2, controlnet_image.size(-1)))
                 
