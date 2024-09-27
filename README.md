@@ -40,6 +40,8 @@ Args:
 
 ## Visualizations-Zeroshot
 
+On the left is the original multi-sequence stitching effect, and on the right is the corrected video sequence
+
 <table>
   <tr>
     <th>Before</th>
