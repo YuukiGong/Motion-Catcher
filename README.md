@@ -108,4 +108,4 @@ Args:
 
 
 # Acknowledgement
-This repository borrows heavily from [Diffusers](https://github.com/huggingface/diffusers), [ControlNet](https://github.com/lllyasviel/ControlNet), thanks for open-sourcing! This work was done in Bytedance, thanks for the cooperators! 
+This repository borrows heavily from [Diffusers](https://github.com/huggingface/diffusers), [ControlNet](https://github.com/lllyasviel/ControlNet), thanks for open-sourcing! 
