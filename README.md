@@ -12,7 +12,7 @@
 ###  Requirements
 
 ```shell
-conda create -n MotionCatcher python=3.10
+conda create -n MotionCatcher python=3.10 
 conda activate MotionCatcher
 pip install -r requirements.txt
 ```
