@@ -85,7 +85,7 @@ if __name__ == "__main__":
     add_index = 0
     datasetnames = sorted(os.listdir(testdatadir))[1+add_index:] 
     for index,filename in enumerate(datasetnames):
-        index = index + add_index
+        index = index + add_index 
         imagepath = os.path.join(testdatadir,filename)
         print(imagepath)
         image = load_image(imagepath)
