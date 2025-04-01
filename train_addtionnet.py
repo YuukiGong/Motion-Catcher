@@ -86,7 +86,7 @@ def image_grid(imgs, rows, cols):
 
 
 
-def save_model_card(repo_id: str, image_logs=None, base_model=str, repo_folder=None):
+def save_model_card(repo_id: str, image_logs=None, base_model=str, repo_folder=None): 
     img_str = ""
     if image_logs is not None:
         img_str = "You can find some example images below.\n\n"
