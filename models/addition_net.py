@@ -18,7 +18,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from diffusers.configuration_utils import ConfigMixin, register_to_config
+from diffusers.configuration_utils import ConfigMixin, register_to_config 
 from diffusers.utils import BaseOutput, logging
 from diffusers.models.attention_processor import (
     ADDED_KV_ATTENTION_PROCESSORS,
